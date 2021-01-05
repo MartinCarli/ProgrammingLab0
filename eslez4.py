@@ -21,6 +21,6 @@ class CSVfile()
 
         return(values)
 
-file=CSVfile(name= 'shampoo_sales_csv')
-print(file.name)
-print(file.get_data())
+# file=CSVfile(name= 'shampoo_sales_csv')
+# print(file.name)
+# print(file.get_data())
