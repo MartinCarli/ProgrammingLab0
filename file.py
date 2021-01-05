@@ -1,3 +1,10 @@
+def list_sum(the_list):
+    total=0
+    for item in the_list:
+        total = total + item
+    return total
+
+
 # Inizializzo una lista vuota per salvare i valori
 values = []
 # Apro e leggo il file, linea per linea
@@ -12,4 +19,7 @@ for line in my_file:
         value = elements[1]
     values.append(float(value))
 
-print(values)
+
+x= list_sum(values)
+print(x)
+#fineprogramma
