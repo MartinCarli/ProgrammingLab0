@@ -1,25 +1,26 @@
-def list_sum(the_list):
-    total=0
-    for item in the_list:
-        total = total + item
-    return total
+#crea ogetto CSVfile
+#l'ogetto deve avere un self.name
+#crea un metodo(funzione) che torni i dati del file csv
 
+class CSVfile()
+    def __init__(self,name):
+        self.name= name
 
-# Inizializzo una lista vuota per salvare i valori
-values = []
-# Apro e leggo il file, linea per linea
-my_file = open("shampoo_sales.txt", "r")
-for line in my_file:
- # Faccio lo split di ogni riga sulla virgola
-    elements = line.split(',')
- # Se NON sto processando l’intestazione...
-    if elements[0] != 'Date':
+    def get_data():
+        values= []
+    
+        mio_file = open(self.name,'r')
 
-        date = elements[0]
-        value = elements[1]
-    values.append(float(value))
+        for line in mio_file:
+            elements= line.split(',')
 
+            if elements[0]!= 'Date':
+                date= elements[0]
+                value= elements[1]
+            values.append(float(value))
 
-x= list_sum(values)
-print(x)
-#fineprogramma
+        return(values)
+
+file=CSVfile(name= 'shampoo_sales_csv')
+print(file.name)
+print(file.get_data())
