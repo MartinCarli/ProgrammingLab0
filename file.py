@@ -1,35 +1,75 @@
-#crea ogetto CSVfile
-#l'ogetto deve avere un self.name
-#crea un metodo(funzione) che torni i dati del file csv
 
-#######seconda parte######
-#modifica csv, se vogliamo aprire un file inesistente arriva un messaggio
-#aggiungiamo nel file una stringa e spazio vuoto e gestiamo l'errore
+#======================
+# Classe per file CSV
+#======================
 
-class CSVfile()
-    def __init__(self,name):
-        self.name= name
+class CSVFile:
 
-    def get_data():
-        values= []
-    
+    def __init__(self, name):
+        
+        # Setto il nome del file
+        self.name = name
+
+
+    def get_data(self):
+
+        # Inizializzo una lista vuota per salvare i valori
+        values = []
+
+        # Provo ad aprire il file per estrarci i dati. Se non ci riesco, prima avverto del'errore, 
+        # poi devo abortire. Questo e' un errore "un-recoverable", ovvero non posso proseguire con
+        # la lettura dei dati se non riesco ad aprire il file!
         try:
-            mio_file = open(self.name,'r')
+            my_file = open(self.name, 'r')
+        except Exception as e:
             
-            for line in mio_file:
+            # Stampo l'errore
+            print('Errore nella lettura del file: "{}"'.format(e))
+            
+            # Esco dalla funzione tornando "niente".
+            return None
+        
+        # Ora inizio a leggere il file linea per linea
+        for line in my_file:
+            
+            # Faccio lo split di ogni linea sulla virgola
+            elements = line.split(',')
+
+            # Se NON sto processando l'intestazione...
+            if elements[0] != 'Date':
+                    
+                # Setto la data ed il valore
+                date  = elements[0]
+                value = elements[1]
+                
+                # La variabile "value" al momento e' ancora una stringa, poiche' ho letto da file di testo,
+                # quindi converto a valore floating point, e se nel farlo ho un errore avverto. Questo e'
+                # un errore "recoverable", posso proseguire (semplicemente salto la linea).
                 try:
-                    elements= line.split(',')
+                    value = float(value)
+                except Exception as e:
+                    
+                    # Stampo l'errore
+                    print('Errore nela conversione a float: "{}"'.format(e))
+                    
+                    # Vado al prossimo "giro" del ciclo, quindi NON eseguo quanto viene dopo (ovvero l'append)
+                    continue
+                
+                # Infine aggiungo alla lista dei valori questo valore
+                values.append(value)
+        
+        # Chiudo il file
+        my_file.close()
+        
+        # Quando ho processato tutte le righe, ritorno i valori
+        return values
+    
+        
+#======================
+# Corpo del programma
+#======================
 
-                    if elements[0]!= 'Date':
-                        date= elements[0]
-                        value= elements[1]
-                    values.append(float(value))
-                except: print("Non e` stato possibile convertire la linea '{}' in un numero float".format(line))
+mio_file = CSVFile(name='shampoo_sales.csv')
 
-            return(values) 
-        except:
-            print("Non ho trovato alcun file con questo nome")
-
-file=CSVfile(name= 'shampoo_sales_csv')
-print(file.name)
-print(file.get_data())
+print('Nome del file: "{}"'.format(mio_file.name))
+print('Dati contenuti nel file: "{}"'.format(mio_file.get_data()))
