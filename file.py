@@ -1,13 +1,29 @@
-
 #adesso cambiero e faro l esercizio della lezione 6
+
+
+#====================================================
+#problema
+
+#il programma non e finito, bisogna ancora fare in modo che il 
+#programma legga un intervallo di righe
+
+#quando avrai capito come fare aggiungi pure qualche test
+
+#=====================================================
+
+
+
+
+
+#=================== INIZIO DEL PROGRAMMA ==========================
+
+
+
 
 
 #======================
 # Classe per file CSV
 #======================
-import itertools
-
-
 
 class CSVFile:
 
@@ -20,9 +36,6 @@ class CSVFile:
     def get_data(self, start= None, end= None):
 
         # Inizializzo una lista vuota per salvare i valori
-        if start>=end:
-            raise('ERRORE: l inizio deve essere piu piccolo della fine')
-        
         values = []
 
         # Provo ad aprire il file per estrarci i dati. Se non ci riesco, prima avverto del'errore, 
@@ -33,10 +46,10 @@ class CSVFile:
 
         except:
             if isinstance is not(name,str):
-            raise Exception('Errore: il file non e di tipo stringa')
+                raise Exception('Errore: il file non e di tipo stringa')
 
         # Ora inizio a leggere il file linea per linea
-        for line in itertools.islice(my_file , start , end):
+        for line in my_file:
            # Faccio lo split di ogni linea sulla virgola
             elements = line.split(',')
 
@@ -75,6 +88,7 @@ class CSVFile:
 #======================
 
 mio_file = CSVFile(name='shampoo_sales.csv')
+
 
 print('Nome del file: "{}"'.format(mio_file.name))
 print('Dati contenuti nel file: "{}"'.format(mio_file.get_data()))
