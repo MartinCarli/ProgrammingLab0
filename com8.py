@@ -12,16 +12,15 @@ class Model(object):
         pass
     
     def predict(self):
-        pass              #ora come ora questo non serve
+        pass               #ora come ora questo non serve
 
 
 class IncrementModel(Model):
 
     def fit(self,data):
         raise NotImplementedError('questo modello non prevede un fit')
-
     def predict(self,prev_months):
-#inizio con i test base
+        #inizio con i test base
         if not isinstance(prev_months,list):
             raise print("Errore: 'prev_months' non e` di tipo lista")
         if len(prev_months)<=2:
@@ -35,7 +34,7 @@ class IncrementModel(Model):
                 continue
             else:
                 incremento+= prev_months[i]-prev_months[i-1]
-                
+        
         avg_incremento= incremento/(n_months-1)
         return (avg_incremento+prev_months[-1])
 
