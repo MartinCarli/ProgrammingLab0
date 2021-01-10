@@ -1,3 +1,6 @@
+#les n 7 giusto
+
+
 #creo la classe CSVfile
 class CSVFile():
     #creo il metodo che istanzia l'oggetto
