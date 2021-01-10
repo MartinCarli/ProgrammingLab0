@@ -1,3 +1,9 @@
+
+#piccolo errore, per avere un programma migliore si consiglia di cambirare nel metodo predict il prev_months con self.name=name. cosi il programma potra predirre il valore non solo per questi dati ma per tutti gli altri
+
+
+
+
 #scrivere una funzione senza fit che calcoli la predizione del valore del mese sucessivo
 
 ##########INIZIO PRE-PROGRAMMA #########################
