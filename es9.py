@@ -1,6 +1,8 @@
 #piccolo errore, per avere un programma migliore si consiglia di cambirare nel metodo predict il prev_months con self.name=name. cosi il programma potra predirre il valore non solo per questi dati ma per tutti gli altri
 
+                 
 #                           ESERCIZIO 9                           #
+
 
 
 #Implementate il metodo fit() nel modello della lezione precedente. Il fit
@@ -19,9 +21,6 @@ class Model(object):
         pass
     def predict:
         pass
-
-
-
 
 
 class FittableIncrementModel(Model):
