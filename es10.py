@@ -164,15 +164,11 @@ class FittableIncrementModel(Model):
 #=========================================#
 
 prefile= 24                 #iniziero a lavorare dopo il 12esimo mese/valore
-
 nfile= len(shampoo_sales)   #definisco la lunghezza dell intero file
-
 testfile= nfile-prefile     #il numero di dati su cui lavorero (12)
-
 numonths= 3                 #perche ho 3 valori su prev_months
 
 incmod= IncrementModel()    #isisntanco il mod senza fit
-
 
 fitmod= FittableIncrementModel()        #isisntanzio il modello con fit
 fitmod.fit(shampoo_sales[0:prefile])    #applico il fit sull istanza
@@ -197,8 +193,8 @@ for model in models:
 
         print('"{}" vs "{}"'.format(int(predizione),int(shampoo_sales[prefile+i])))
 
-        errore+= abs(int(shampoo_sales[prefile+i])-predizione)
+        errore+= abs(int(shampoo_sales[prefile+i])-predizione) #calcolo l errore di tutto il testfile
 
-    erroremed= errore/testfile
+    erroremed= errore/testfile #calcolo l errore medio
     
-    print('L errore medio e "{}"'.format(erroremed))
+    print('L errore medio e "{}"'.format(erroremed)) #stampo l errore
