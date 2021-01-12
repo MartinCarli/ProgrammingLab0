@@ -1,3 +1,5 @@
+
+
 class ExamException(Exception):     #per alzare le eccezioni
     pass
 
@@ -33,6 +35,7 @@ class MovingAvarage:
             valore== valore/mialung
             lista_valori.append(valore)
 
+        return lista_valori
 
 #####CORPO DEL PROGRAMMA######
 moving_average = MovingAverage(2)
