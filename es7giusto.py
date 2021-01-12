@@ -58,10 +58,9 @@ class CSVFile():
         #ritorno la lista di valori numerici
         return converted_values
 #test
-try:
+
     file = CSVFile('shampoo_sales.csv')
     data = file.get_data(start=1,end=5)
     print(data)
-except:
-    print(e)
+
 
