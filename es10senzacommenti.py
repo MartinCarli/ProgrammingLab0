@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #es numero 10 CON POCHISSIMI COMMENTI######
+=======
+#es numero 10 CON POCHISSIMI COMMENTI
+>>>>>>> 6a8ce2e6e5d581df4879afdc5350274221b890e5
 
 
 ######################  INIZIO DEL PROGRAMMA  ########################
