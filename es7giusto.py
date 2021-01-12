@@ -20,10 +20,10 @@ class CSVFile():
         #provo ad aprire il file
         try:
             my_file = open(self.name, 'r')
-        #se il file  è inesistente stampo il seguente messaggio
         except Exception as e:
-            print('Il file "{}" che ho provato ad aprire è inesistente, riprovare con il nome coretto'.format(e))
-            #e poi esco dalla funzione perche si presenta un errore unrecoverable
+            
+            # Stampo l'errore
+            print('Errore nella lettura del file: "{}"'.format(e))
             return None
         #creo un contatore da utilizzare nel for
         numero_riga = 0
@@ -60,7 +60,7 @@ class CSVFile():
 #test
 try:
     file = CSVFile('shampoo_sales.csv')
-    data = file.get_data(start=2,end=5)
+    data = file.get_data(start=1,end=5)
     print(data)
 except:
     print(e)
