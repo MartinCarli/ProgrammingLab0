@@ -13,6 +13,7 @@ class MovingAvarage:
         if not isinstance(valori,list):
             raise ExamException('Errore i valori non sono in una lista')
 
+
         nval == len(valori)
 
         if mialung > nval:
