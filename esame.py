@@ -1,9 +1,7 @@
-
-
 class ExamException(Exception):     #per alzare le eccezioni
     pass
 
-class MovingAvarage:
+class MovingAverage:
     def __init__(self,lunghezza):
         self.lunghezza = lunghezza
 
@@ -12,7 +10,6 @@ class MovingAvarage:
         
         if not isinstance(valori,list):
             raise ExamException('Errore i valori non sono in una lista')
-
 
         nval == len(valori)
 
@@ -28,17 +25,13 @@ class MovingAvarage:
         for i in valori:
             valore=0
             k==i
-            if (mialung-i):
+            if (i+mialung>=nval):
                 continue
             while(k is not mialung):
                 valore+= valori[k]
-                k++
+                k+=1
             valore== valore/mialung
             lista_valori.append(valore)
 
         return lista_valori
 
-#####CORPO DEL PROGRAMMA######
-moving_average = MovingAverage(2)
-result = moving_average.compute([2,4,8,16])
-print(result)
