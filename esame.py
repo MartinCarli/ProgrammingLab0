@@ -1,7 +1,6 @@
 class ExamException(Exception):     #per alzare le eccezioni
     pass
 
-
 class MovingAverage:
     def __init__(self,lunghezza):
         self.lunghezza = lunghezza
