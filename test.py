@@ -1,4 +1,3 @@
-
 from esame import MovingAverage, ExamException
 
 import unittest
