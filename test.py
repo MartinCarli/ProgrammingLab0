@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #il prog per testare l esame 1
 
 from esame import MovingAverage, ExamException
