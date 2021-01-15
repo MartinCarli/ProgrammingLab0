@@ -1,3 +1,5 @@
+#prog del prof
+
 class ExamException(Exception):
     pass
 
@@ -55,3 +57,5 @@ class MovingAverage():
                 averages.append(sum(data[i-self.window:i])/self.window)
                 
         return averages
+
+
