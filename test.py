@@ -8,7 +8,6 @@ import unittest
 score = 0
 
 class TestAndGrade(unittest.TestCase):
-
     def test_correctness(self):
         
         moving_average = MovingAverage(2)
