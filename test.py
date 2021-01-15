@@ -1,3 +1,4 @@
+#il prog per testare l esame 1
 
 from esame import MovingAverage, ExamException
 
@@ -110,3 +111,4 @@ class TestAndGrade(unittest.TestCase):
 # Run the tests
 unittest.main()
 
+#fine
