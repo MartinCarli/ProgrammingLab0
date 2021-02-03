@@ -1,4 +1,8 @@
+#non e mia !1!!!!!!!!!12122331313
+
 #questa classe serve a calcolare la media mobile
+
+
 class MovingAverage:
     #costruttore
     def __init__(self, window):
@@ -38,13 +42,3 @@ class MovingAverage:
 class ExamException(Exception):
         pass
 
-#instanzio MovingAverage
-'''moving_average = MovingAverage(2)
-test = [[2,4,8,16],[], [1,2,3], [1.2, 2.3, 4.5, 6.3, 4.6], "ciao", 10, [1,2,3,[4,5]], ["1","2", "3", "4"], [1,2, True]]
-
-for t in test:
-    try:
-        result = moving_average.compute(t)
-        print(result)
-    except ExamException as e:
-        print(e)'''
